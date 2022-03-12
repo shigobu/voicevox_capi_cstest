@@ -20,6 +20,7 @@ namespace VoicevoxCapiCsTest
 #else
         const string dllName = "libcore_cpu_universal2.dylib";
 #endif
+        const string openJTalkDictName = "open_jtalk_dic_utf_8-1.11";
 
         [DllImport(dllName)]
         static extern bool initialize(byte[] root_dir_path, bool use_gpu, int cpu_num_threads = 0);
@@ -73,7 +74,7 @@ namespace VoicevoxCapiCsTest
 
                 Console.WriteLine("OpenJTalkの初期化");
                 VoicevoxResultCode resultCode;
-                resultCode = voicevox_initialize_openjtalk(@"C:\open_jtalk_dic_utf_8-1.11");
+                resultCode = voicevox_initialize_openjtalk(Path.Combine(GetThisAppDirectory(), openJTalkDictName));
                 ThrowVoicevoxError(resultCode);
 
                 Console.WriteLine("喋らせる文章の入力");
