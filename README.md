@@ -5,7 +5,7 @@ voicevoxのC言語apiを使ってみるテスト
 Visual Studio のビルドを使用  
 .NET 6を使用しているので、dotnetコマンドが使えるはずです。  
 ```
-dotnet build 
+dotnet build --framework net6.0-windows
 ```
 
 ## 実行方法
@@ -17,7 +17,7 @@ OpenJTalkの辞書は「出力ディレクトリ\open_jtalk_dic_utf_8-1.11」に
 出力ディレクトリに有るvoicevox_capi_cstest.exeをダブルクリックで起動できます。  
 dotnetコマンドも使えるはずです。  
 ```
-dotnet run
+dotnet run --framework net6.0-windows
 ```
 
 ## 開発環境
