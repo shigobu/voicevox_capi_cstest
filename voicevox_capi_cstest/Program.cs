@@ -15,10 +15,12 @@ namespace VoicevoxCapiCsTest
             VOICEVOX_RESULT_NOT_INITIALIZE_OPEN_JTALK_ERR = 1,
         }
 
-        [DllImport("core.dll")]
+        const string dllName = "core_cpu_x64.dll";
+
+        [DllImport(dllName)]
         static extern bool initialize(byte[] root_dir_path, bool use_gpu, int cpu_num_threads = 0);
 
-        [DllImport("core.dll")]
+        [DllImport(dllName)]
         static extern void finalize();
 
         /**
@@ -26,7 +28,7 @@ namespace VoicevoxCapiCsTest
          * open jtalkを初期化する
          * @return 結果コード
          */
-        [DllImport("core.dll", CharSet = CharSet.Ansi)]
+        [DllImport(dllName, CharSet = CharSet.Ansi)]
         static extern VoicevoxResultCode voicevox_initialize_openjtalk(string dict_path);
 
         /**
@@ -38,7 +40,7 @@ namespace VoicevoxCapiCsTest
          * @param output_wav 音声データを出力する先のポインタ。使用が終わったらvoicevox_wav_freeで開放する必要がある
          * @return 結果コード
          */
-        [DllImport("core.dll")]
+        [DllImport(dllName)]
         static extern VoicevoxResultCode voicevox_tts(byte[] text, long speaker_id, out int output_binary_size, IntPtr output_wav);
 
         /**
@@ -46,7 +48,7 @@ namespace VoicevoxCapiCsTest
          * voicevox_ttsで生成した音声データを開放する
          * @param wav 開放する音声データのポインタ
          */
-        [DllImport("core.dll", CharSet = CharSet.Auto)]
+        [DllImport(dllName, CharSet = CharSet.Auto)]
         static extern void voicevox_wav_free(IntPtr wav);
 
         /**
@@ -54,7 +56,7 @@ namespace VoicevoxCapiCsTest
          * エラーで返ってきた結果コードをメッセージに変換する
          * @return エラーメッセージ文字列
          */
-        [DllImport("core.dll", CharSet = CharSet.Unicode)]
+        [DllImport(dllName, CharSet = CharSet.Unicode)]
         static extern IntPtr voicevox_error_result_to_message(VoicevoxResultCode result_code);
 
         static void Main(string[] args)
