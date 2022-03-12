@@ -15,7 +15,11 @@ namespace VoicevoxCapiCsTest
             VOICEVOX_RESULT_NOT_INITIALIZE_OPEN_JTALK_ERR = 1,
         }
 
+#if WINDOWS
         const string dllName = "core_cpu_x64.dll";
+#elif MACOS
+        const string dllName = "libcore_cpu_universal2.dylib";
+#endif
 
         [DllImport(dllName)]
         static extern bool initialize(byte[] root_dir_path, bool use_gpu, int cpu_num_threads = 0);
