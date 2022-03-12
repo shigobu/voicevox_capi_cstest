@@ -9,7 +9,9 @@ dotnet build
 ```
 
 ## 実行方法
-出力ディレクトリに、各種onnxファイル・core.dll・onnxruntime.dllを配置してください。  
+~~出力ディレクトリに、各種onnxファイル・core.dll・onnxruntime.dllを配置してください。~~  
+出力ディレクトリにcore.zipの中身とonnxruntime.dllを配置してください。  
+
 OpenJTalkの辞書は「C:\open_jtalk_dic_utf_8-1.11」を固定で見ています。  
 
 出力ディレクトリに有るvoicevox_capi_cstest.exeをダブルクリックで起動できます。  
