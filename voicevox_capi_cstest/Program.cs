@@ -105,7 +105,6 @@ namespace VoicevoxCapiCsTest
                     }
                 }
 
-                using (MemoryStream waveStream = new MemoryStream(waveArray))
                 using (FileStream fileStream = new FileStream(Path.Combine(GetThisAppDirectory(), "test.wav"), FileMode.Create))
                 {
                     Console.WriteLine("保存");
