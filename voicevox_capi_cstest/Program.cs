@@ -108,15 +108,6 @@ namespace VoicevoxCapiCsTest
                 using (MemoryStream waveStream = new MemoryStream(waveArray))
                 using (FileStream fileStream = new FileStream(Path.Combine(GetThisAppDirectory(), "test.wav"), FileMode.Create))
                 {
-#if false
-                    //なぜか再生されない
-                    Console.WriteLine("再生中");
-                    //読み込む
-                    SoundPlayer player = new SoundPlayer(waveStream);
-                    //非同期再生する
-                    player.PlaySync();
-                    Console.WriteLine("再生終了");
-#endif
                     Console.WriteLine("保存");
                     fileStream.Write(waveArray, 0, waveArray.Length);
                     Console.WriteLine("保存完了");
