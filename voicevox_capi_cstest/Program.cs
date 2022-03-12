@@ -17,7 +17,7 @@ namespace VoicevoxCapiCsTest
 
 #if WINDOWS
         const string dllName = "core_cpu_x64.dll";
-#elif MACOS
+#else
         const string dllName = "libcore_cpu_universal2.dylib";
 #endif
 
